@@ -663,27 +663,28 @@ document.addEventListener('DOMContentLoaded', function () {
         </ul>
     </nav>
 <div class="dashboard-container">
-    <div class="search-container">
-        <form action="{% url 'base:search' user_id=user_id %}" method="post" class="search-bar">
-            {% csrf_token %}
-            <input type="text" placeholder="Search" name="q">
-            <button type="submit"><i class='bx bx-search-alt-2'></i></button>
-        </form>
+        <div class="search-container">
+            <form action="{% url 'base:search' user_id=user_id %}" method="post" class="search-bar">
+                {% csrf_token %}
+                <label for="search-input">Search:</label>
+                <input type="text" id="search-input" name="q" placeholder="Enter keywords...">
+                <button type="submit" aria-label="Search"><i class='bx bx-search-alt-2'></i></button>
+            </form>
+        </div>
+        <div class="tab-content">
+            <div id="box1">
+                <a href="{% url 'base:myPlans' user_id=user_id %}" style="text-align: center; color: inherit;">
+                    <h1>View My Plans</h1>
+                </a>
+            </div>
+            <div id="box2">
+                <h1 style="text-align: center">Today's Workout</h1>
+            </div>
+            <div id="box3">
+                <h1 style="text-align: center">Tomorrow's Workout</h1>
+            </div>
+        </div>
     </div>
-    <div class="tab-content">
-        <div id="box1">
-            <a href="myPlans/" style="text-align: center; color: inherit;">
-                <h1>View my plans</h1>
-            </a>
-        </div>
-        <div id="box2">
-            <h1 style="text-align: center">Today's Workout</h1>
-        </div>
-        <div id="box3">
-            <h1 style="text-align: center">Tomorrow's Workout</h1>
-        </div>
-    </div>
-</div>
 </body>
 
 
