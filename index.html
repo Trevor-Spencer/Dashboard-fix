@@ -1,0 +1,1485 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+:root {
+  --primary-clr: #2FA9C7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-clr);
+  border-radius: 50px;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  background-color: #DFEBED;
+}
+
+/* Navbar start */
+a,
+a:hover {
+  text-decoration: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #106a80;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav a {
+  color: #fff;
+}
+
+nav a:hover {
+  color: #2FA9C7;
+
+}
+
+.nav-logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.nav-logo a {
+  text-decoration: none;
+}
+
+.nav-logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.nav-logo a:hover {
+  color: #fff;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.menu li {
+  padding: 15px 10px;
+  font-size: 16px;
+}
+
+nav .menu li:hover {
+  background-color: #2FA9C7;
+}
+
+nav .menu li:hover a {
+  color: #fff;
+}
+
+
+.toggle {
+  font-size: 30px;
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    padding: 15px 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    cursor: pointer;
+  }
+}
+
+/*  Navbar end  */
+
+/* Dashboard Start */
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+  padding: 10px 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 1%;
+  margin-right: 1%;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 998;
+
+}
+
+.search-bar input {
+  width: 400px;
+  height: auto;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  background: transparent;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button i {
+  font-size: 20px;
+  color: #2FA9C7;
+}
+
+
+#box1,
+#box2,
+#box3 {
+  display: inline-block;
+  background-color: #168aa6;
+  width: 30%;
+  height: 60vh;
+  border-radius: 20px;
+  margin: 1vh;
+}
+
+
+.tab-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+
+  #box1,
+  #box2,
+  #box3 {
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+    top: 120px;
+    z-index: 0;
+  }
+}
+
+/* Dashboard End */
+
+/* My Plans Styles Start */
+
+.myPlans {
+  width: 100%;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myPlans-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.myPlans-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.myPlans-plans {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.myPlans-plans ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.myPlans-plans li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.myPlans-plans li:last-child {
+  border-bottom: none;
+}
+
+.myPlans-plans a {
+  color: var(--primary-clr);
+  font-weight: 500;
+}
+
+.myPlans-items {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  /* Adjust width as necessary */
+  margin-bottom: 20px;
+}
+
+.myPlans-items a button {
+  padding: 10px 20px;
+  background-color: var(--primary-clr);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.myPlans-items a button:hover {
+  background-color: #106a80;
+}
+
+@media screen and (max-width: 800px) {
+  .myPlans-container {
+    flex-direction: column;
+  }
+
+  .myPlans-items {
+    flex-direction: column;
+  }
+
+  .myPlans-items a button {
+    margin-bottom: 10px;
+  }
+}
+
+/* My Plans Styles End */
+
+/* Plan and Workout Management Styles */
+
+.createPlan,
+.deletePlan,
+.createWorkout,
+.deleteWorkout {
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.createPlan h1,
+.deletePlan h1,
+.createWorkout h1,
+.deleteWorkout h1 {
+  color: var(--primary-clr);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.createPlan form,
+.deletePlan form,
+.createWorkout form,
+.deleteWorkout form {
+  display: flex;
+  flex-direction: column;
+}
+
+.createPlan form input[type="text"],
+.createPlan form select,
+.deletePlan form input[type="text"],
+.deletePlan form select,
+.createWorkout form input[type="text"],
+.createWorkout form select,
+.deleteWorkout form input[type="text"],
+.deleteWorkout form select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.createPlan form input[type="submit"],
+.createPlan form input[type="reset"],
+.deletePlan form input[type="submit"],
+.deletePlan form input[type="reset"],
+.createWorkout form input[type="submit"],
+.createWorkout form input[type="reset"],
+.deleteWorkout form input[type="submit"],
+.deleteWorkout form input[type="reset"] {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: var(--primary-clr);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.createPlan form input[type="submit"]:hover,
+.createPlan form input[type="reset"]:hover,
+.deletePlan form input[type="submit"]:hover,
+.deletePlan form input[type="reset"]:hover,
+.createWorkout form input[type="submit"]:hover,
+.createWorkout form input[type="reset"]:hover,
+.deleteWorkout form input[type="submit"]:hover,
+.deleteWorkout form input[type="reset"]:hover {
+  background-color: #106a80;
+}
+
+/* Plan and Workout Management Styles End */
+
+
+
+
+/* login register start */
+
+.login-registation-wrapper {
+  width: 420px;
+  color: black;
+}
+
+.login-registation-wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.login-registation-wrapper h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.login-registation-wrapper .login-registration-input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.login-registration-input-box input {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 15px;
+  text-align: left;
+  font-size: 16px;
+
+  padding: 20px 45px 20px 20px;
+}
+
+.login-registration-input-box::placeholder {
+  color: #fff;
+}
+
+.login-registration-input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.login-registation-wrapper .remember-forget {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.remember-forget label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
+
+.remember-forget a {
+  columns: #fff;
+  text-decoration: none;
+  color: #2CA4FB;
+}
+
+.remember-forget a:hover {
+  text-decoration: underline;
+
+}
+
+.login-registation-wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: #2FA9C7;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 0, 0, 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.login-registation-wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+
+}
+
+.register-link p a {
+  color: #2CA4FB;
+  text-decoration: none;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+/* login register end */
+
+/*  Calendar Page Start  */
+
+.calendar_container {
+  position: relative;
+  width: 1200px;
+  min-height: 850px;
+  margin: 0 auto;
+  padding: 5px;
+  color: #fff;
+  display: flex;
+
+  border-radius: 10px;
+  background-color: #373c4f;
+}
+
+.calendar_left {
+  width: 60%;
+  padding: 20px;
+}
+
+.calendar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #878895;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.calendar::before,
+.calendar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 12px;
+  height: 97%;
+  border-radius: 0 5px 5px 0;
+  background-color: #d3d4d6d7;
+  transform: translateY(-50%);
+}
+
+.calendar::before {
+  height: 94%;
+  left: calc(100% + 12px);
+  background-color: rgb(153, 153, 153);
+}
+
+.calendar .month {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.calendar .month .prev,
+.calendar .month .next {
+  cursor: pointer;
+}
+
+.calendar .month .prev:hover,
+.calendar .month .next:hover {
+  color: var(--primary-clr);
+}
+
+.calendar .weekdays {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.weekdays div {
+  width: 14.28%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar .days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.calendar .days .day {
+  width: 14.28%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--primary-clr);
+  border: 1px solid #f5f5f5;
+}
+
+.calendar .days .day:nth-child(7n + 1) {
+  border-left: 2px solid #f5f5f5;
+}
+
+.calendar .days .day:nth-child(7n) {
+  border-right: 2px solid #f5f5f5;
+}
+
+.calendar .days .day:nth-child(-n + 7) {
+  border-top: 2px solid #f5f5f5;
+}
+
+.calendar .days .day:nth-child(n + 29) {
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.calendar .days .day:not(.prev-date, .next-date):hover {
+  color: #fff;
+  background-color: var(--primary-clr);
+}
+
+.calendar .days .prev-date,
+.calendar .days .next-date {
+  color: #b3b3b3;
+}
+
+.calendar .days .active {
+  position: relative;
+  font-size: 2rem;
+  color: #fff;
+  background-color: var(--primary-clr);
+}
+
+.calendar .days .active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px 2px var(--primary-clr);
+}
+
+.calendar .days .today {
+  font-size: 2rem;
+}
+
+.calendar .days .plan {
+  position: relative;
+}
+
+.calendar .days .plan::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 75%;
+  height: 6px;
+  border-radius: 30px;
+  transform: translateX(-50%);
+  background-color: var(--primary-clr);
+}
+
+.calendar .days .day:hover.plan::after {
+  background-color: #fff;
+}
+
+.calendar .days .active.plan::after {
+  background-color: #fff;
+  bottom: 20%;
+}
+
+.calendar .days .active.plan {
+  padding-bottom: 10px;
+}
+
+.calendar .goto-today {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  color: var(--primary-clr);
+}
+
+.calendar .goto-today .goto {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid var(--primary-clr);
+}
+
+.calendar .goto-today .goto input {
+  width: 100%;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 20px;
+  color: var(--primary-clr);
+  border-radius: 5px;
+}
+
+.calendar .goto-today button {
+  padding: 5px 10px;
+  border: 1px solid var(--primary-clr);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--primary-clr);
+}
+
+.calendar .goto-today button:hover {
+  color: #fff;
+  background-color: var(--primary-clr);
+}
+
+.calendar .goto-today .goto button {
+  border: none;
+  border-left: 1px solid var(--primary-clr);
+  border-radius: 0;
+}
+
+.calendar_container .calendar_right {
+  position: relative;
+  width: 40%;
+  min-height: 100%;
+  padding: 20px 0;
+}
+
+.calendar_right .today-date {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  padding-left: 70px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.calendar_right .today-date .plan-day {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.calendar_right .today-date .plan-date {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #878895;
+}
+
+.plans {
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: 4px;
+}
+
+.plans .plan {
+  position: relative;
+  width: 95%;
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 20px;
+  padding-left: 50px;
+  color: #fff;
+  background: linear-gradient(90deg, #3f4458, transparent);
+  cursor: pointer;
+}
+
+.plans .plan:nth-child(even) {
+  background: transparent;
+}
+
+.plans .plan:hover {
+  background: linear-gradient(90deg, var(--primary-clr), transparent);
+}
+
+.plans .plan .title {
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.plans .plan .title .plan-title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 20px;
+}
+
+.plans .plan i {
+  color: var(--primary-clr);
+  font-size: 0.5rem;
+}
+
+.plans .plan:hover i {
+  color: #fff;
+}
+
+.plans .plan .plan-time {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #878895;
+  margin-left: 15px;
+  pointer-events: none;
+}
+
+.plans .plan:hover .plan-time {
+  color: #fff;
+}
+
+.plans .plan::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 3rem;
+  line-height: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.3;
+  color: var(--primary-clr);
+  transform: translateY(-50%);
+}
+
+.plans .plan:hover::after {
+  display: flex;
+}
+
+.add-plan {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #878895;
+  border: 2px solid #878895;
+  opacity: 0.5;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.add-plan:hover {
+  opacity: 1;
+}
+
+.add-plan i {
+  pointer-events: none;
+}
+
+.plans .no-plan {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #878895;
+}
+
+.add-plan-wrapper {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  width: 90%;
+  max-height: 0;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #fff;
+  transform: translateX(-50%);
+  transition: max-height 0.5s ease;
+}
+
+.add-plan-wrapper.active {
+  max-height: 300px;
+}
+
+.add-plan-header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: #373c4f;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.add-plan-header .close {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.add-plan-header .close:hover {
+  color: var(--primary-clr);
+}
+
+.add-plan-header .title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.add-plan-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px;
+}
+
+.add-plan-body .add-plan-input {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-plan-body .add-plan-input input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 0 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #373c4f;
+}
+
+.add-plan-body .add-plan-input input::placeholder {
+  color: #a5a5a5;
+}
+
+.add-plan-body .add-plan-input input:focus {
+  border-bottom: 1px solid var(--primary-clr);
+}
+
+.add-plan-body .add-plan-input input:focus::placeholder {
+  color: var(--primary-clr);
+}
+
+.add-plan-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.add-plan-footer .add-plan-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: var(--primary-clr);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid var(--primary-clr);
+}
+
+.add-plan-footer .add-plan-btn:hover {
+  background-color: transparent;
+  color: var(--primary-clr);
+}
+
+/*  Calendar Page End  */
+</style>
+<script>
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContents = document.querySelectorAll('[data-tab-content]')
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.tabTarget)
+        tabContents.forEach(tabContent => tabContent.classList.remove('active'))
+        tabs.forEach(tab => tab.classList.remove('active'))
+        tab.classList.add('active')
+        target.classList.add('active')
+    })
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    function initializeToggle() {
+        var toggle = document.querySelector(".toggle");
+        toggle.addEventListener('click', function () {
+            var menu = document.querySelector(".menu");
+            menu.classList.toggle("active");
+            var icon = toggle.querySelector("i");
+            if (icon.classList.contains('bx-menu')) {
+                icon.classList.remove('bx-menu');
+                icon.classList.add('bx-x');
+            } else {
+                icon.classList.remove('bx-x');
+                icon.classList.add('bx-menu');
+            }
+        });
+    }
+
+    initializeToggle();
+
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const calendar = document.querySelector(".calendar");
+    const date = document.querySelector(".date");
+    const daysContainer = document.querySelector(".days");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+    const todayBtn = document.querySelector(".today-btn");
+    const gotoBtn = document.querySelector(".goto-btn");
+    const dateInput = document.querySelector(".date-input");
+    const planDay = document.querySelector(".plan-day");
+    const planDate = document.querySelector(".plan-date");
+    const plansContainer = document.querySelector(".plans");
+    const addPlanBtn = document.querySelector(".add-plan");
+    const addPlanWrapper = document.querySelector(".add-plan-wrapper");
+    const addPlanCloseBtn = document.querySelector(".close");
+    const addPlanTitle = document.querySelector(".plan-name");
+    const addPlanFrom = document.querySelector(".plan-time-from");
+    const addPlanTo = document.querySelector(".plan-time-to");
+    const addPlanSubmit = document.querySelector(".add-plan-btn");
+
+    let today = new Date();
+    let activeDay;
+    let month = today.getMonth();
+    let year = today.getFullYear();
+
+    const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    const plansArr = [];
+    getPlans();
+    console.log(plansArr);
+
+    function initCalendar() {
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const prevLastDay = new Date(year, month, 0);
+        const prevDays = prevLastDay.getDate();
+        const lastDate = lastDay.getDate();
+        const day = firstDay.getDay();
+        const nextDays = 7 - lastDay.getDay() - 1;
+
+        date.innerHTML = `${months[month]} ${year}`;
+
+        let days = "";
+
+        for (let x = day; x > 0; x--) {
+            days += `<div class="day prev-date">${prevDays - x + 1}</div>`;
+        }
+
+        for (let i = 1; i <= lastDate; i++) {
+            let plan = false;
+            plansArr.forEach((planObj) => {
+                if (planObj.day === i && planObj.month === month + 1 && planObj.year === year) {
+                    plan = true;
+                }
+            });
+            if (i === new Date().getDate() && year === new Date().getFullYear() && month === new Date().getMonth()) {
+                activeDay = i;
+                getActiveDay(i);
+                updatePlans(i);
+                days += plan ? `<div class="day today active plan">${i}</div>` : `<div class="day today active">${i}</div>`;
+            } else {
+                days += plan ? `<div class="day plan">${i}</div>` : `<div class="day">${i}</div>`;
+            }
+        }
+
+        for (let j = 1; j <= nextDays; j++) {
+            days += `<div class="day next-date">${j}</div>`;
+        }
+        daysContainer.innerHTML = days;
+        addListener();
+    }
+
+    function prevMonth() {
+        month--;
+        if (month < 0) {
+            month = 11;
+            year--;
+        }
+        initCalendar();
+    }
+
+    function nextMonth() {
+        month++;
+        if (month > 11) {
+            month = 0;
+            year++;
+        }
+        initCalendar();
+    }
+
+    prev.addEventListener("click", prevMonth);
+    next.addEventListener("click", nextMonth);
+
+    initCalendar();
+
+    function addListener() {
+        const days = document.querySelectorAll(".day");
+        days.forEach((day) => {
+            day.addEventListener("click", (e) => {
+                getActiveDay(e.target.innerHTML);
+                updatePlans(Number(e.target.innerHTML));
+                activeDay = Number(e.target.innerHTML);
+                days.forEach((day) => {
+                    day.classList.remove("active");
+                });
+                if (e.target.classList.contains("prev-date")) {
+                    prevMonth();
+                    setTimeout(() => {
+                        const days = document.querySelectorAll(".day");
+                        days.forEach((day) => {
+                            if (!day.classList.contains("prev-date") && day.innerHTML === e.target.innerHTML) {
+                                day.classList.add("active");
+                            }
+                        });
+                    }, 100);
+                } else if (e.target.classList.contains("next-date")) {
+                    nextMonth();
+                    setTimeout(() => {
+                        const days = document.querySelectorAll(".day");
+                        days.forEach((day) => {
+                            if (!day.classList.contains("next-date") && day.innerHTML === e.target.innerHTML) {
+                                day.classList.add("active");
+                            }
+                        });
+                    }, 100);
+                } else {
+                    e.target.classList.add("active");
+                }
+            });
+        });
+    }
+
+    todayBtn.addEventListener("click", () => {
+        today = new Date();
+        month = today.getMonth();
+        year = today.getFullYear();
+        initCalendar();
+    });
+
+    dateInput.addEventListener("input", (e) => {
+        dateInput.value = dateInput.value.replace(/[^0-9/]/g, "");
+        if (dateInput.value.length === 2) {
+            dateInput.value += "/";
+        }
+        if (dateInput.value.length > 7) {
+            dateInput.value = dateInput.value.slice(0, 7);
+        }
+        if (e.inputType === "deleteContentBackward") {
+            if (dateInput.value.length === 3) {
+                dateInput.value = dateInput.value.slice(0, 2);
+            }
+        }
+    });
+
+    if (gotoBtn) {
+        gotoBtn.addEventListener("click", gotoDate);
+    }
+
+    function gotoDate() {
+        console.log("here");
+        const dateArr = dateInput.value.split("/");
+        if (dateArr.length === 2) {
+            if (dateArr[0] > 0 && dateArr[0] < 13 && dateArr[1].length === 4) {
+                month = dateArr[0] - 1;
+                year = dateArr[1];
+                initCalendar();
+                return;
+            }
+        }
+        alert("Invalid Date");
+    }
+
+    function getActiveDay(date) {
+        const day = new Date(year, month, date);
+        const dayName = day.toString().split(" ")[0];
+        planDay.innerHTML = dayName;
+        planDate.innerHTML = `${date} ${months[month]} ${year}`;
+    }
+
+    function updatePlans(date) {
+        let plans = "";
+        plansArr.forEach((plan) => {
+            if (date === plan.day && month + 1 === plan.month && year === plan.year) {
+                plan.plans.forEach((plan) => {
+                    plans += `<div class="plan">
+                        <div class="title">
+                            <i class='bx bx-circle'></i>
+                            <h3 class="plan-title">${plan.title}</h3>
+                        </div>
+                        <div class="plan-time">
+                            <span class="plan-time">${plan.time}</span>
+                        </div>
+                    </div>`;
+                });
+            }
+        });
+        if (plans === "") {
+            plans = `<div class="no-plan">
+                <h3>No Plans</h3>
+            </div>`;
+        }
+        plansContainer.innerHTML = plans;
+        savePlans();
+    }
+
+    addPlanBtn.addEventListener("click", () => {
+        addPlanWrapper.classList.toggle("active");
+    });
+
+    addPlanCloseBtn.addEventListener("click", () => {
+        addPlanWrapper.classList.remove("active");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (e.target !== addPlanBtn && !addPlanWrapper.contains(e.target)) {
+            addPlanWrapper.classList.remove("active");
+        }
+    });
+
+    addPlanTitle.addEventListener("input", (e) => {
+        addPlanTitle.value = addPlanTitle.value.slice(0, 60);
+    });
+
+    addPlanFrom.addEventListener("input", (e) => {
+        addPlanFrom.value = addPlanFrom.value.replace(/[^0-9:]/g, "");
+        if (addPlanFrom.value.length === 2) {
+            addPlanFrom.value += ":";
+        }
+        if (addPlanFrom.value.length > 5) {
+            addPlanFrom.value = addPlanFrom.value.slice(0, 5);
+        }
+    });
+
+    addPlanTo.addEventListener("input", (e) => {
+        addPlanTo.value = addPlanTo.value.replace(/[^0-9:]/g, "");
+        if (addPlanTo.value.length === 2) {
+            addPlanTo.value += ":";
+        }
+        if (addPlanTo.value.length > 5) {
+            addPlanTo.value = addPlanTo.value.slice(0, 5);
+        }
+    });
+
+    addPlanSubmit.addEventListener("click", () => {
+        const planTitle = addPlanTitle.value;
+        const planTimeFrom = addPlanFrom.value;
+        const planTimeTo = addPlanTo.value;
+        if (planTitle === "" || planTimeFrom === "" || planTimeTo === "") {
+            alert("Please fill all the fields");
+            return;
+        }
+
+        const timeFromArr = planTimeFrom.split(":");
+        const timeToArr = planTimeTo.split(":");
+        if (
+            timeFromArr.length !== 2 ||
+            timeToArr.length !== 2 ||
+            timeFromArr[0] > 23 ||
+            timeFromArr[1] > 59 ||
+            timeToArr[0] > 23 ||
+            timeToArr[1] > 59
+        ) {
+            alert("Invalid Time Format");
+            return;
+        }
+
+        const timeFrom = convertTime(planTimeFrom);
+        const timeTo = convertTime(planTimeTo);
+
+        let planExist = false;
+        plansArr.forEach((plan) => {
+            if (plan.day === activeDay && plan.month === month + 1 && plan.year === year) {
+                plan.plans.forEach((plan) => {
+                    if (plan.title === planTitle) {
+                        planExist = true;
+                    }
+                });
+            }
+        });
+        if (planExist) {
+            alert("Plan already added");
+            return;
+        }
+        const newPlan = {
+            title: planTitle,
+            time: `${timeFrom} - ${timeTo}`,
+        };
+        console.log(newPlan);
+        console.log(activeDay);
+        let planAdded = false;
+        if (plansArr.length > 0) {
+            plansArr.forEach((item) => {
+                if (item.day === activeDay && item.month === month + 1 && item.year === year) {
+                    item.plans.push(newPlan);
+                    planAdded = true;
+                }
+            });
+        }
+
+        if (!planAdded) {
+            plansArr.push({
+                day: activeDay,
+                month: month + 1,
+                year: year,
+                plans: [newPlan],
+            });
+        }
+
+        console.log(plansArr);
+        addPlanWrapper.classList.remove("active");
+        addPlanTitle.value = "";
+        addPlanFrom.value = "";
+        addPlanTo.value = "";
+        updatePlans(activeDay);
+        const activeDayEl = document.querySelector(".day.active");
+        if (!activeDayEl.classList.contains("plan")) {
+            activeDayEl.classList.add("plan");
+        }
+    });
+
+    plansContainer.addEventListener("click", (e) => {
+        if (e.target.classList.contains("plan")) {
+            if (confirm("Are you sure you want to delete this plan?")) {
+                const planTitle = e.target.children[0].children[1].innerHTML;
+                plansArr.forEach((plan) => {
+                    if (plan.day === activeDay && plan.month === month + 1 && plan.year === year) {
+                        plan.plans.forEach((item, index) => {
+                            if (item.title === planTitle) {
+                                plan.plans.splice(index, 1);
+                            }
+                        });
+                        if (plan.plans.length === 0) {
+                            plansArr.splice(plansArr.indexOf(plan), 1);
+                            const activeDayEl = document.querySelector(".day.active");
+                            if (activeDayEl.classList.contains("plan")) {
+                                activeDayEl.classList.remove("plan");
+                            }
+                        }
+                    }
+                });
+                updatePlans(activeDay);
+            }
+        }
+    });
+
+    function savePlans() {
+        localStorage.setItem("plans", JSON.stringify(plansArr));
+    }
+
+    function getPlans() {
+        if (localStorage.getItem("plans") === null) {
+            return;
+        }
+        plansArr.push(...JSON.parse(localStorage.getItem("plans")));
+    }
+
+    function convertTime(time) {
+        let timeArr = time.split(":");
+        let timeHour = timeArr[0];
+        let timeMin = timeArr[1];
+        let timeFormat = timeHour >= 12 ? "PM" : "AM";
+        timeHour = timeHour % 12 || 12;
+        time = `${timeHour}:${timeMin} ${timeFormat}`;
+        return time;
+    }
+});
+</script>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <a href="{% url 'base:home' %}">
+                <img src="{% static 'images/AdaptivDevLogo.png' %}" alt="AdaptiveFit Logo">
+            </a>
+        </div>
+        <div class="toggle">
+            <a href="#"><i class='bx bx-menu'></i></a>
+        </div>
+        <ul class="menu">
+            <li><a href="{% url 'base:home' %}">Home</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'base:dashboard' user_id=user_id %}">Dashboard</a></li>
+                <li><a href="#">Tracker</a></li>
+                <li><a href="{% url 'base:myPlans' user_id=user_id %}">My Plans</a></li>
+                <li><a href="{% url 'base:calendar' user_id=user_id %}">Calendar</a></li>
+                <li><a href="{% url 'base:logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'base:login' %}">Login</a></li>
+                <li><a href="{% url 'base:register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+<div class="dashboard-container">
+    <div class="search-container">
+        <form action="{% url 'base:search' user_id=user_id %}" method="post" class="search-bar">
+            {% csrf_token %}
+            <input type="text" placeholder="Search" name="q">
+            <button type="submit"><i class='bx bx-search-alt-2'></i></button>
+        </form>
+    </div>
+    <div class="tab-content">
+        <div id="box1">
+            <a href="myPlans/" style="text-align: center; color: inherit;">
+                <h1>View my plans</h1>
+            </a>
+        </div>
+        <div id="box2">
+            <h1 style="text-align: center">Today's Workout</h1>
+        </div>
+        <div id="box3">
+            <h1 style="text-align: center">Tomorrow's Workout</h1>
+        </div>
+    </div>
+</div>
+</body>
+
+
+</html>
+
